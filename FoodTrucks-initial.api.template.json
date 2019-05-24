@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "apiRevision": "1",
+        "apiVersion": "v1",
+        "isCurrent": false,
+        "apiRevisionDescription": "My first revision",
+        "apiVersionDescription": "My first version",
+        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'FoodTruckAPIVersionSet')]",
+        "subscriptionRequired": false,
+        "displayName": "FoodTrucks",
+        "path": "foodtrucks",
+        "protocols": [
+          "http"
+        ]
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/FoodTrucks')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    }
+  ]
+}

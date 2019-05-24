@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "isCurrent": false,
+        "subscriptionRequired": false,
+        "path": "foodtrucks",
+        "value": "https://apimdevops.blob.core.windows.net/armartifacts/sources/foodtrucks-api/swagger.json",
+        "format": "swagger-link-json"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/FoodTrucks')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "value": "https://apimdevops.blob.core.windows.net/armartifacts/sources/foodtrucks-api/api-policy.xml",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/FoodTrucks/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/policies",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'FoodTrucks')]"
+      ]
+    },
+    {
+      "properties": {},
+      "name": "[concat(parameters('ApimServiceName'), '/starter/FoodTrucks')]",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'FoodTrucks')]"
+      ]
+    }
+  ]
+}

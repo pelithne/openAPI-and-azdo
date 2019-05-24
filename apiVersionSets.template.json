@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "displayName": "FoodTruckAPI",
+        "description": "An API for finding local food trucks",
+        "versionQueryName": "versionQuery",
+        "versionHeaderName": "versionHeader",
+        "versioningScheme": "Query"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/FoodTruckAPIVersionSet')]",
+      "type": "Microsoft.ApiManagement/service/apiVersionSets",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    }
+  ]
+}
