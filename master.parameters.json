@@ -6,7 +6,7 @@
       "value": "pelithneAPIM"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": "https://apimdevops.blob.core.windows.net/armartifacts"
+      "value": "https://raw.githubusercontent.com/pelithne/openAPI-and-azdo/master/"
     }
   },
   "resources": []
