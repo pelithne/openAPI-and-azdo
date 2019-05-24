@@ -38,26 +38,6 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/FoodTrucks-initial.api.template.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "ApimServiceName": {
-            "value": "[parameters('ApimServiceName')]"
-          }
-        }
-      },
-      "name": "FoodTrucks-InitialAPITemplate",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'versionSetTemplate')]"
-      ]
-    },
-    {
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
           "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/FoodTrucks-subsequent.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
@@ -69,10 +49,7 @@
       },
       "name": "FoodTrucks-SubsequentAPITemplate",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'FoodTrucks-InitialAPITemplate')]"
-      ]
+      "apiVersion": "2018-01-01"
     }
   ]
 }
