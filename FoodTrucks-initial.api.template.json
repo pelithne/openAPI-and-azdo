@@ -16,13 +16,13 @@
         "apiVersionDescription": "My first version",
         "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'FoodTruckAPIVersionSet')]",
         "subscriptionRequired": false,
-        "displayName": "FoodTrucks",
-        "path": "foodtrucks",
+        "displayName": "petstore",
+        "path": "petstore",
         "protocols": [
           "http"
         ]
       },
-      "name": "[concat(parameters('ApimServiceName'), '/FoodTrucks')]",
+      "name": "[concat(parameters('ApimServiceName'), '/petstore')]",
       "type": "Microsoft.ApiManagement/service/apis",
       "apiVersion": "2019-01-01",
       "dependsOn": []
