@@ -40,7 +40,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore-subsequent.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {

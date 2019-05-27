@@ -9,8 +9,8 @@
   "resources": [
     {
       "properties": {
-        "displayName": "FoodTruckAPI",
-        "description": "An API for finding local food trucks",
+        "displayName": "petstore",
+        "description": "",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
         "versioningScheme": "Query"
