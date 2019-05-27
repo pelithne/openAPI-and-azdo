@@ -22,24 +22,6 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/apiVersionSets.template.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "ApimServiceName": {
-            "value": "[parameters('ApimServiceName')]"
-          }
-        }
-      },
-      "name": "versionSetTemplate",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01",
-      "dependsOn": []
-    },
-    {
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
           "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
