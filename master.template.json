@@ -20,20 +20,25 @@
   "resources": [
     {
       "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/petstore.api.template.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "ApimServiceName": {
-            "value": "[parameters('ApimServiceName')]"
-          }
-        }
+        "isCurrent": false,
+        "subscriptionRequired": false,
+        "path": "pet",
+        "value": "https://petstore.swagger.io/v2/swagger.json",
+        "format": "swagger-link-json"
       },
-      "name": "petstore-SubsequentAPITemplate",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-01-01"
+      "name": "[concat(parameters('ApimServiceName'), '/petstore')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    },
+    {
+      "properties": {},
+      "name": "[concat(parameters('ApimServiceName'), '/starter/petstore')]",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "apiVersion": "2019-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'petstore')]"
+      ]
     }
   ]
 }
