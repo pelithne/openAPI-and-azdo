@@ -11,11 +11,11 @@
       "properties": {
         "isCurrent": false,
         "subscriptionRequired": false,
-        "path": "foodtrucks",
-        "value": "https://apimdevops.blob.core.windows.net/armartifacts/sources/foodtrucks-api/swagger.json",
+        "path": "pet",
+        "value": "https://petstore.swagger.io/v2/swagger.json",
         "format": "swagger-link-json"
       },
-      "name": "[concat(parameters('ApimServiceName'), '/FoodTrucks')]",
+      "name": "[concat(parameters('ApimServiceName'), '/petstore')]",
       "type": "Microsoft.ApiManagement/service/apis",
       "apiVersion": "2019-01-01",
       "dependsOn": []
