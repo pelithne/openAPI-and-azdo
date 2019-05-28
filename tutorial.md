@@ -17,7 +17,7 @@ To get access to the ARM templates in this repository, you can import them into 
 Select **Repos**, then look for the section **or import a repository**, and click on the **import** button.
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/1-1-import.PNG">
+  <img width="30%" height="30%" hspace="20" src="./media/1-1-import.PNG">
 </p>
 <br>
 
@@ -37,13 +37,13 @@ Now that you have the respository with the ARM templates in Azure Devops, you ca
 When the project has been created, its time to create a build pipeline. Start by selecting **pipelines** in the left hand panel, and choosing **Builds**.
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/2-lefthand-navigation.PNG">
+  <img width="20%" height="20%" hspace="20" src="./media/2-lefthand-navigation.PNG">
 </p>
 <br>
 
 In the space that opens, click the button named **New Pipeline**
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/3-new-pipelina.PNG">
+  <img width="70%" height="70%" hspace="20" src="./media/3-new-pipelina.PNG">
 </p>
 <br>
 
@@ -60,7 +60,7 @@ Choose **Azure Repos Git**
 You should see the repository you just created, perhaps named **APIM CICD with Swagger Import** unless you came up with a much better one
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/pic 5-select-repo.PNG">
+  <img width="60%" height="60%" hspace="20" src="./media/pic 5-select-repo.PNG">
 </p>
 <br>
 
