@@ -64,6 +64,12 @@ You should see the repository you just created, perhaps named **APIM CICD with S
 </p>
 <br>
 
+Select this repo. Then, in the following space, select **Starter pipeline**
+<p align="left">
+  <img width="60%" height="60%" hspace="20" src="./media/6-conf-pipeline.PNG">
+</p>
+<br>
+
 
 
 
