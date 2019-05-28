@@ -3,7 +3,7 @@ This tutorial contains instruction about how to setup Azure API Management, usin
 
 In order to complete this tutorial, you need an Azure Devops account. If you don't have one, you can go  <a href="https://azure.microsoft.com/en-us/services/devops/">here</a>, and select **Start free** for a free account. 
 
-You also need an azure subscription. If you don't have one, create one for free <a https://azure.microsoft.com/en-us/free/">here</a>
+You also need an azure subscription. If you don't have one, create one for free <a href="https://azure.microsoft.com/en-us/free/">here</a>
 
 ## Create new project
 To begin with, create a new project in Azure Devops and give it a suitable name, e.g. **APIM CICD with Swagger Import**, and then click **create**
