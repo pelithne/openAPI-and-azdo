@@ -116,7 +116,7 @@ Time to create the pipeline that actually deploys the API Management instance to
 After this, you will create a new release pipeline:
 
 <p align="left">
-  <img width="60%" height="60%" hspace="20" src="./media/12-new-release-pipeline.PNG">
+  <img width="70%" height="70%" hspace="20" src="./media/12-new-release-pipeline.PNG">
 </p>
 <br>
 
@@ -155,7 +155,7 @@ After this, add a new task to the stage. You can do this by clicking on the **ta
 Now, in the same way you did in the build pipeline, create an **Azure Resource Group Deployment** 
 
 <p align="left">
-  <img width="60%" height="60%" hspace="20" src="./media/17-add-az-rg-deployment.PNG">
+  <img width="70%" height="70%" hspace="20" src="./media/17-add-az-rg-deployment.PNG">
 </p>
 <br>
 
@@ -167,7 +167,7 @@ The settings should be the same as in the release pipeline, except for three thi
 If you click on the three dots to the right of **Override template parameters** you will see something similar to this:
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/18-override-template-variables.PNG">
+  <img width="60%" height="60%" hspace="20" src="./media/18-override-template-variables.PNG">
 </p>
 <br>
 
