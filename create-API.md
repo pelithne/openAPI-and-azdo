@@ -117,10 +117,10 @@ Time to create the pipeline that actually deploys the API Management instance to
 </p>
 <br>
 
-After this, you will create a new release pipeline:
+After this, you will create the release pipeline:
 
 <p align="left">
-  <img width="70%" height="70%" hspace="20" src="./media/12-new-release-pipeline.PNG">
+  <img width="70%" height="70%" hspace="20" src="./media/20-second-release-pipeline.PNG">
 </p>
 <br>
 
