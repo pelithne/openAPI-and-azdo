@@ -69,13 +69,13 @@ If it doesn't, make sure that **Azure repos git** is selected as source. When it
 In the list that appears, select **start with an empty job**
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/8-start-with-empty">
+  <img width="50%" height="50%" hspace="20" src="./media/8-start-with-empty.PNG">
 </p>
 <br>
 
 Start by selecting the tab **triggers** and choose to enable continuous integration:
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/9-anable-ci.PNG">
+  <img width="50%" height="50%" hspace="20" src="./media/9-enable-ci.PNG">
 </p>
 <br>
 
