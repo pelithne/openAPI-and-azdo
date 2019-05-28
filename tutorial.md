@@ -71,7 +71,7 @@ If it doesn't, make sure that **Azure repos git** is selected as source. When it
 In the list that appears, select **start with an empty job**
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/8-start-with-empty.PNG">
+  <img width="30%" height="30%" hspace="20" src="./media/8-start-with-empty.PNG">
 </p>
 <br>
 
@@ -109,14 +109,14 @@ Set the **Path to publish** to ``api-instance.json`` and leave the rest of the s
 Time to create the pipeline that actually deploys the API Management instance to Azure. Start by selecting **releases** under **pipelines** in the left hand navidation:
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/11-select-release-pipeline.PNG">
+  <img width="30%" height="30%" hspace="20" src="./media/11-select-release-pipeline.PNG">
 </p>
 <br>
 
 After this, you will create a new release pipeline:
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/12-new-release-pipeline.PNG">
+  <img width="60%" height="60%" hspace="20" src="./media/12-new-release-pipeline.PNG">
 </p>
 <br>
 
@@ -124,14 +124,14 @@ After this, you will create a new release pipeline:
 The first thing you want to do is to add an artifact that will be used as input to the pipeline. The artifact is the ARM-template that was validated during the build step.
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/13-add-an-artifact.PNG">
+  <img width="30%" height="30%" hspace="20" src="./media/13-add-an-artifact.PNG">
 </p>
 <br>
 
 Select the project you have created, perhaps named **APIM CICD with Swagger Import**. Select the build pipeline, perhaps named **APIM CICD with Swagger Import-CI** and leave the rest as defaults.
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/14-add-an-artifact-2.PNG">
+  <img width="50%" height="50%" hspace="20" src="./media/14-add-an-artifact2.PNG">
 </p>
 <br>
 
@@ -139,7 +139,7 @@ Select the project you have created, perhaps named **APIM CICD with Swagger Impo
 Now click the tiny "flash" in the corner of the artifact, to enable a continous deployment trigger.
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/15-cd-trigger.PNG">
+  <img width="60%" height="60%" hspace="20" src="./media/15-cd-trigger.PNG">
 </p>
 <br>
 
@@ -155,7 +155,7 @@ After this, add a new task to the stage. You can do this by clicking on the **ta
 Now, in the same way you did in the build pipeline, create an **Azure Resource Group Deployment** 
 
 <p align="left">
-  <img width="50%" height="50%" hspace="20" src="./media/17-add-az-rg-deployment.PNG">
+  <img width="60%" height="60%" hspace="20" src="./media/17-add-az-rg-deployment.PNG">
 </p>
 <br>
 
