@@ -102,17 +102,81 @@ After this you can **Save and Queue** the build pipelline.
 
 Finally, we want to make sure that the validated template from this build step is made available to the release pipeleine that we will create next. That is done by creating another job, once again clicking the plus sign next to the **Agent Job**, and then selecting and adding a **Publish Build Artifacts** task.
 
-Leave the defauklt settings, then select **Save and queue**.
+Set the **Path to publish** to ``api-instance.json`` and leave the rest of the settings to default. Then select **Save and queue**.
 
 
+## Create release pipeline
+Time to create the pipeline that actually deploys the API Management instance to Azure. Start by selecting **releases** under **pipelines** in the left hand navidation:
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/11-select-release-pipeline.PNG">
+</p>
+<br>
+
+After this, you will create a new release pipeline:
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/12-new-release-pipeline.PNG">
+</p>
+<br>
 
 
+The first thing you want to do is to add an artifact that will be used as input to the pipeline. The artifact is the ARM-template that was validated during the build step.
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/13-add-an-artifact.PNG">
+</p>
+<br>
+
+Select the project you have created, perhaps named **APIM CICD with Swagger Import**. Select the build pipeline, perhaps named **APIM CICD with Swagger Import-CI** and leave the rest as defaults.
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/14-add-an-artifact-2.PNG">
+</p>
+<br>
 
 
+Now click the tiny "flash" in the corner of the artifact, to enable a continous deployment trigger.
 
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/15-cd-trigger.PNG">
+</p>
+<br>
 
+In the **Stages** part of the pipeline, click on **Add a stage**. As in the build pipeline, select **Start with an empty job**. Give it a nice name, like **Deploy**.
 
+After this, add a new task to the stage. You can do this by clicking on the **tasks** tab in the top navigation pane. Since you only have one stage, it will be automatically selected:
 
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/16-add-task.PNG">
+</p>
+<br>
 
+Now, in the same way you did in the build pipeline, create an **Azure Resource Group Deployment** 
 
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/17-add-az-rg-deployment.PNG">
+</p>
+<br>
 
+The settings should be the same as in the release pipeline, except for three things:
+* The template should be the ARM that was made available by the release step. You should be able to naviate to it by selecting the 3 dots to the right of the template field
+* Deployment mode should be **Incremental** (instead of validation only, as in the release pipe)
+* You should override the template variable named **APIManagementInstanceName**
+
+If you click on the three dots to the right of **Override template parameters** you will see something similar to this:
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/18-override-template-variables.PNG">
+</p>
+<br>
+
+Simply press OK. This will populate the text field with the template variables you can override. The only one you need to override is the APIManagementInstanceName. This needs to be a globally unique name, so name it using something reasonably unique, like your corporate signum. 
+
+Finally, we should make sure that this pipeline does not deploy to production in an uncontrolled way. Lets add a **Pre-deployment approval** by clicking on the "flash" on the right side of the deploy task. This will open up a **Pre-deployment conditions**. Set the pre-deployment approvals to enabled, then add your self as approver.
+
+Then click **Save** in the top right of the page.
+
+Now you can go back to the build pipeline and create a build. This should kick off a build process, which will in turn trigger a release process once it finishes. 
+
+When the release pipeline starts up, you will be asked to approve the deployment by opening up the release pipeline and selecting **Approve**
