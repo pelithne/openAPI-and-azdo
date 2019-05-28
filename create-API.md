@@ -1,5 +1,5 @@
 # Introduction
-This tutorial contains instruction about how to setup a simple API into an Azure API Management instance, using ARM templates in Azure DevOps. 
+This tutorial contains instruction about how to setup a simple API into an Azure API Management instance, using ARM templates in Azure DevOps. The ARM template refers to a public API with it's swagger definition. Feel free to have a look at the file "petstore-swagger-import.json" to get an understanding of how that is made (it's actually fairly simple).
 
 In order to complete this tutorial, you need an Azure Devops account. If you don't have one, you can go  <a href="https://azure.microsoft.com/en-us/services/devops/">here</a>, and select **Start free** for a free account. 
 
