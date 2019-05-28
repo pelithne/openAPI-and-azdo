@@ -163,9 +163,19 @@ Now, in the same way you did in the build pipeline, create an **Azure Resource G
 </p>
 <br>
 
-The settings should be the same as in the release pipeline, except for two things:
+The settings should be the same as in the release pipeline, except for three things:
 * The template should be the ARM that was made available by the release step. You should be able to naviate to it by selecting the 3 dots to the right of the template field
 * Deployment mode should be **Incremental** (instead of validation only, as in the release pipe)
+* You should override the template variable named **APIManagementInstanceName**
+
+If you click on the three dots to the right of **Override template parameters** you will see something similar to this:
+
+<p align="left">
+  <img width="60%" height="60%" hspace="20" src="./media/18-override-template-variables.PNG">
+</p>
+<br>
+
+Simply press OK. This will populate the text field with the template variables you can override. The only one you need to override is the APIManagementInstanceName. This needs to be name of the API Management instance deployed with the previous tutorial. 
 
 
 Finally, we should make sure that this pipeline does not deploy to production in an uncontrolled way. Lets add a **Pre-deployment approval** by clicking on the "flash" on the right side of the deploy task. This will open up a **Pre-deployment conditions**. Set the pre-deployment approvals to enabled, then add your self as approver.
