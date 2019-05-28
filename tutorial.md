@@ -50,25 +50,65 @@ In the space that opens, click the button named **New Pipeline**
 
 The next space that opens, gives you the option to specify where the code of the project is stored.  
 
-Choose **Azure Repos Git**
+Choose **Use the classic editor to create a pipeline without YAML** at the bottom of the list
 
 <p align="left">
   <img width="50%" height="50%" hspace="20" src="./media/4-where-is-your-code.PNG">
 </p>
 <br>
 
-You should see the repository you just created, perhaps named **APIM CICD with Swagger Import** unless you came up with a much better one
+In the screen that follows, you should see the repository you recently cloned from github. If you named it as proposed above, it should look something like this:
 
 <p align="left">
-  <img width="60%" height="60%" hspace="20" src="./media/pic 5-select-repo.PNG">
+  <img width="50%" height="50%" hspace="20" src="./media/7-select-repo.PNG">
 </p>
 <br>
 
-Select this repo. Then, in the following space, select **Starter pipeline**
+If it doesn't, make sure that **Azure repos git** is selected as source. When it looks right, select **continue**
+
+In the list that appears, select **start with an empty job**
+
 <p align="left">
-  <img width="60%" height="60%" hspace="20" src="./media/6-conf-pipeline.PNG">
+  <img width="50%" height="50%" hspace="20" src="./media/8-start-with-empty">
 </p>
 <br>
+
+Start by selecting the tab **triggers** and choose to enable continuous integration:
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/9-anable-ci.PNG">
+</p>
+<br>
+
+This is so that a new build process will be started as soon as something is changed in your repository.
+
+Next go to the tasks, and add a Azure Resource Group Deployment task to your build Phase. You do this by clicking the plus sign next to **Agent Job** and writing **azure resource...**  in the search field, like so:
+
+<p align="left">
+  <img width="50%" height="50%" hspace="20" src="./media/10-az-rg-deployment.PNG">
+</p>
+<br>
+
+Select **Azure Resource Gruop Deployment** and click **Add**
+
+After this you need to fill in some details. This is fairly self-explanatory if you have worked with **Azure** before. You need to select which subscription to use, what to call the resource group and which ARM-template to use. The **location** field is simply the geographic location, e.g. **West Europe**
+
+The ARM template to use is ``apim-instance.json``.
+
+Now make sure to set **Deployment mode** to **validation only**. This is because this step is only supposed to be a validation step, that validates the content of the ARM template. Nothing will actually be deployed to the cloud in this step.
+
+After this you can **Save and Queue** the build pipelline.
+
+Finally, we want to make sure that the validated template from this build step is made available to the release pipeleine that we will create next. That is done by creating another job, once again clicking the plus sign next to the **Agent Job**, and then selecting and adding a **Publish Build Artifacts** task.
+
+Leave the defauklt settings, then select **Save and queue**.
+
+
+
+
+
+
+
+
 
 
 
