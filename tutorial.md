@@ -180,3 +180,10 @@ Then click **Save** in the top right of the page.
 Now you can go back to the build pipeline and create a build. This should kick off a build process, which will in turn trigger a release process once it finishes. 
 
 When the release pipeline starts up, you will be asked to approve the deployment by opening up the release pipeline and selecting **Approve**
+
+## Next steps
+The next step is to deploy an API to the API Management instance that was just created. The process is more or less identical to what was done in this tutorial, except that the ARM template should be a different one (the one named "petstore-swagger-import.json" to be specific). Feel free to try to work out how to do that on your own.
+
+If you need some assistance, you can continue to <a href="https://github.com/pelithne/openAPI-and-azdo/blob/master/create-API.md">this tutorial</a>, which gives detailed instructions on how to achieve this.
+
+
